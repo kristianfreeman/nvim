@@ -529,7 +529,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
 
         lua_ls = {
@@ -662,6 +662,15 @@ require('lazy').setup({
         'supermaven-inc/supermaven-nvim',
         config = function()
           require('supermaven-nvim').setup {}
+        end,
+      },
+      {
+        'catppuccin/nvim',
+        name = 'catppuccin',
+        priority = 1000,
+        init = function()
+          require('catppuccin').setup()
+          vim.cmd.colorscheme 'catppuccin-mocha'
         end,
       },
     },
